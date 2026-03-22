@@ -5,15 +5,14 @@ const errorHandler = require("./middleware/errorHandler");
 const app = express();
 
 // ✅ CORS CONFIG (IMPORTANT)
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",          // local frontend
-      "https://golf-backend-eight.vercel.app/" // 🔥 replace after deploy
-    ],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://golf-backend-eight.vercel.app" // 🔥 your frontend URL
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(express.json());
 
