@@ -4,7 +4,17 @@ const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
-app.use(cors());
+// ✅ CORS CONFIG (IMPORTANT)
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",          // local frontend
+      "https://your-frontend.vercel.app" // 🔥 replace after deploy
+    ],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Routes
@@ -16,6 +26,11 @@ app.use("/api/draw", require("./routes/drawRoutes"));
 app.use("/api/entry", require("./routes/entryRoutes"));
 app.use("/api/winner", require("./routes/winnerRoutes"));
 app.use("/api/admin", require("./routes/adminRoutes"));
+
+// Health check route (VERY IMPORTANT FOR RENDER)
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
 
 // Error Middleware
 app.use(errorHandler);
