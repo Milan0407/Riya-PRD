@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color: #0f172a;
+    background:
+      radial-gradient(circle at top left, rgba(16, 185, 129, 0.22), transparent 28%),
+      radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 24%),
+      linear-gradient(180deg, #f8fafc 0%, #eef6f3 100%);
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    color: #0f172a;
+    background: transparent;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen px-4 py-6 sm:px-6 lg:px-8;
+  }
+
+  .page-container {
+    @apply mx-auto flex max-w-7xl flex-col gap-6;
+  }
+
+  .hero-banner {
+    @apply flex flex-col gap-6 rounded-[32px] border border-white/70 bg-slate-900 px-6 py-8 text-white shadow-[0_30px_80px_rgba(15,23,42,0.18)] sm:px-8 lg:flex-row lg:items-end lg:justify-between;
+    background-image:
+      radial-gradient(circle at top right, rgba(16, 185, 129, 0.32), transparent 28%),
+      radial-gradient(circle at center left, rgba(245, 158, 11, 0.24), transparent 26%);
+  }
+
+  .hero-title {
+    @apply mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+
+  .hero-copy {
+    @apply mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base;
+  }
+
+  .eyebrow {
+    @apply inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-100;
+  }
+
+  .panel-card {
+    @apply rounded-[28px] border border-white/70 bg-white/85 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur;
+  }
+
+  .sub-card {
+    @apply rounded-3xl border border-slate-200 bg-white p-5;
+  }
+
+  .panel-title {
+    @apply text-2xl font-semibold tracking-tight text-slate-900;
+  }
+
+  .panel-subtitle {
+    @apply text-sm leading-6 text-slate-500;
+  }
+
+  .stats-grid {
+    @apply grid gap-4 sm:grid-cols-2 xl:grid-cols-3;
+  }
+
+  .stat-card {
+    @apply rounded-[24px] border border-emerald-100 bg-gradient-to-br from-white to-emerald-50 p-5 shadow-sm;
+  }
+
+  .stat-label {
+    @apply text-sm font-medium uppercase tracking-[0.18em] text-slate-500;
+  }
+
+  .stat-value {
+    @apply mt-3 text-3xl font-semibold tracking-tight text-slate-900;
+  }
+
+  .dashboard-grid {
+    @apply grid gap-6 xl:grid-cols-2;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-slate-700;
+  }
+
+  .pill {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .pill-success {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+
+  .pill-warning {
+    @apply bg-amber-100 text-amber-800;
+  }
+
+  .pill-muted {
+    @apply bg-slate-100 text-slate-600;
+  }
+
+  .status-banner {
+    @apply rounded-2xl border px-4 py-3 text-sm font-medium;
+  }
+
+  .status-success {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-800;
+  }
+
+  .status-error {
+    @apply border-rose-200 bg-rose-50 text-rose-700;
+  }
+
+  .list-row {
+    @apply flex items-center justify-between gap-4 rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3;
+  }
+
+  .empty-state {
+    @apply rounded-2xl border border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500;
+  }
+
+  .auth-shell {
+    @apply grid min-h-screen gap-8 px-4 py-6 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8;
+  }
+
+  .auth-brand-panel {
+    @apply relative overflow-hidden rounded-[36px] bg-slate-900 px-6 py-10 text-white shadow-[0_30px_80px_rgba(15,23,42,0.18)] sm:px-10;
+    background-image:
+      radial-gradient(circle at top left, rgba(16, 185, 129, 0.34), transparent 26%),
+      radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.26), transparent 24%);
+  }
+
+  .auth-title {
+    @apply mt-5 max-w-2xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl;
+  }
+
+  .auth-copy {
+    @apply mt-4 max-w-xl text-base leading-7 text-slate-300;
+  }
+
+  .auth-feature-list {
+    @apply mt-10 grid gap-3 sm:max-w-xl;
+  }
+
+  .info-chip {
+    @apply rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-slate-100 backdrop-blur;
+  }
+
+  .auth-card {
+    @apply flex flex-col justify-center gap-8 rounded-[36px] border border-white/70 bg-white/85 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur sm:p-10;
+  }
+}
