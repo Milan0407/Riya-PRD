@@ -9,7 +9,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",          // local frontend
-      "https://your-frontend.vercel.app" // 🔥 replace after deploy
+      "https://golf-backend-eight.vercel.app/" // 🔥 replace after deploy
     ],
     credentials: true,
   })
