@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://golf-backend-eight.vercel.app/api" // 🔥 your frontend URL
+    "https://golf-backend-eight.vercel.app" // 🔥 your frontend URL
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
